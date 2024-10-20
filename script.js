@@ -48,8 +48,9 @@ function init() {
       document.addEventListener('click', removeContextMenus);
 
       // Keyboard shortcuts in modals
-      document.addEventListener('keydown', function (e) {
-        if (!document.querySelector('.modal.hidden')) {
+      document.addEventListener("keydown", function (e) {
+        const activeModal = document.querySelector(".modal:not(.hidden)");
+        if (activeModal) {
           // A modal is open
           const activeModal = document.querySelector('.modal:not(.hidden)');
           if (e.key === 'Enter') {
