@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>New Tab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Tab Bar -->
+  <div id="tab-bar">
+    <div id="tabs-container">
+      <div id="tabs"></div>
+      <!-- Add Tab Button -->
+      <div id="add-tab-button" class="tab add-tab">+</div>
+    </div>
+    <!-- Options Button as Tab -->
+    <div id="options-tab" class="tab options-tab">Options</div>
+  </div>
+
+  <!-- Content Container -->
+  <div id="content-container">
+    <!-- Container for Columns -->
+    <div id="columns"></div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal-overlay" class="hidden"></div>
+
+  <!-- Section Modal -->
+  <div id="section-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="section-modal-title">Add Group</h2>
+      <input type="text" id="section-name-input" placeholder="Group Name" />
+      <div class="modal-buttons">
+        <button id="section-modal-save-button">Save</button>
+        <button id="section-modal-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Modal -->
+  <div id="page-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="page-modal-title">Add Page</h2>
+      <input type="text" id="page-url-input" placeholder="Page URL" />
+      <input type="text" id="page-name-input" placeholder="Page Name (optional)" />
+      <div class="modal-buttons">
+        <button id="page-modal-save-button">Save</button>
+        <button id="page-modal-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Modal -->
+  <div id="tab-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="tab-modal-title">Add Tab</h2>
+      <input type="text" id="tab-name-input" placeholder="Tab Name" />
+      <!-- Number of Columns Input -->
+      <label for="tab-columns-input">Number of Columns (1-20):</label>
+      <input type="number" id="tab-columns-input" value="4" min="1" max="20" />
+      <div class="modal-buttons">
+        <button id="tab-modal-save-button">Save</button>
+        <button id="tab-modal-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Options Modal -->
+  <div id="options-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Options</h2>
+      <!-- Removed Number of Columns from Options -->
+      <label for="tab-width-input">Tab Width (pixels):</label>
+      <input type="number" id="tab-width-input" value="120" min="50" max="300" />
+      <!-- Export and Import buttons -->
+      <div class="modal-buttons">
+        <button id="export-button">Export</button>
+        <button id="import-button">Import</button>
+        <button id="options-modal-save-button">Save</button>
+        <button id="options-modal-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export/Import Modal -->
+  <div id="export-import-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="export-import-modal-title">Export/Import Data</h2>
+      <textarea id="export-import-textarea" rows="15"></textarea>
+      <div class="modal-buttons">
+        <button id="export-import-save-button">Save</button>
+        <button id="export-import-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Multiple Pages Modal -->
+  <div id="add-multiple-pages-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add Multiple Pages</h2>
+      <textarea id="multiple-pages-textarea" rows="10" placeholder="Enter one URL per line"></textarea>
+      <div class="modal-buttons">
+        <button id="add-multiple-pages-save-button">Save</button>
+        <button id="add-multiple-pages-cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Libraries and Scripts -->
+  <script src="libs/Sortable.min.js"></script>
+  <script src="script.js"></script>
+  <script src="columns.js"></script>
+  <script src="modals.js"></script>
+</body>
+</html>

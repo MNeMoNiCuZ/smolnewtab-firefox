@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Smol New Tab",
+  "version": "1.0.0",
+  "description": "A simple new tab page with multiple tabs, groups and pages.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "smolnewtab@proton.me"
+    }
+  }
+}

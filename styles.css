@@ -1,0 +1,395 @@
+/* styles.css */
+
+/* Global Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #cfcfcf;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Tab Bar Styles */
+#tab-bar {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0; /* Remove margin to connect with content */
+}
+
+#tabs-container {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+#tabs {
+    display: flex;
+}
+
+.tab {
+    background-color: #3e3e3e;
+    color: #fff;
+    padding: 10px 15px;
+    margin-right: 2px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.tab.active {
+    background-color: #5e5e5e;
+}
+
+.options-tab {
+    margin-left: auto;
+}
+
+#add-tab-button {
+    width: var(--half-tab-width);
+    min-width: 40px;
+    max-width: 300px;
+}
+
+/* Content Container */
+#content-container {
+    background-color: #252525;
+    border-radius: 0 8px 8px 8px;
+    padding: 10px;
+    margin-top: -1px; /* Overlap border to connect with tabs */
+}
+
+#columns {
+    display: flex;
+    width: 100%; /* Ensure columns container takes full width */
+    gap: 10px; /* Use gap instead of margin to prevent overflow */
+}
+
+/* Column Styles */
+.column {
+    flex: 1; /* Let columns take equal space */
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; /* Prevent columns from collapsing */
+}
+
+/* Group Styles */
+.section {
+    background-color: #3e3e3e;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px; /* Reduced margin-bottom */
+    box-sizing: border-box;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Make entire header clickable */
+}
+
+.section-header h2 {
+    flex-grow: 1;
+    margin: 0;
+    color: #fff;
+}
+
+.collapse-icon {
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+/* Pages */
+.pages {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.add-page-button {
+    background-color: #4e4e4e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.add-page-button:hover {
+    background-color: #6e6e6e;
+}
+
+/* Page Button Styles */
+.page-button {
+    display: flex;
+    align-items: center;
+    background-color: #4e4e4e;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 48px; /* Limit the height to approximately 2 lines */
+    cursor: pointer; /* Show hand cursor to indicate clickable */
+}
+
+.page-button:hover {
+    background-color: #6e6e6e;
+}
+
+.page-button .favicon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.page-button span {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.hidden,
+#modal-overlay.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: auto; /* Remove fixed height */
+    box-sizing: border-box;
+    max-height: 90vh; /* Prevent overflow */
+    overflow: auto; /* Enable scrolling if content overflows */
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange children vertically */
+}
+
+/* Ensure the textarea fills available space in the modal */
+#export-import-modal .modal-content,
+#add-multiple-pages-modal .modal-content {
+    width: 900px; /* Adjust as needed */
+    height: 600px; /* Adjust as needed */
+    /* Flex layout already set in .modal-content */
+}
+
+/* Adjust textarea in Export/Import Modal */
+#export-import-modal textarea {
+    flex-grow: 1; /* Occupies all available vertical space */
+    width: 100%;
+    resize: none; /* Prevent manual resizing */
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3e3e3e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px; /* Space between textarea and buttons */
+}
+
+/* Adjust textarea in Add Multiple Pages Modal */
+#add-multiple-pages-modal textarea {
+    flex-grow: 1; /* Occupies all available vertical space */
+    width: 100%;
+    resize: none; /* Prevent manual resizing */
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3e3e3e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px; /* Space between textarea and buttons */
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3e3e3e;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px; /* Add space between buttons */
+}
+
+.modal-buttons button {
+    background-color: #3e3e3e;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.modal-buttons button:hover {
+    background-color: #5e5e5e;
+}
+
+/* Options Modal Specific Styles */
+#options-modal .modal-content {
+    width: 600px; /* Make options modal twice as wide */
+}
+
+#options-modal .modal-buttons {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+#options-modal .modal-buttons button {
+    flex: none;
+    margin-left: 10px;
+}
+
+#options-modal .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Adjust Save and Cancel buttons to be on their own row */
+#options-modal .modal-buttons {
+    flex-wrap: nowrap;
+}
+
+/* Context Menu Styles */
+.context-menu {
+    position: absolute;
+    background-color: #2e2e2e;
+    color: #fff;
+    border: 1px solid #5e5e5e;
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    min-width: 150px;
+}
+
+.context-menu-title {
+    padding: 10px 20px;
+    background-color: #3e3e3e;
+    font-weight: bold;
+    border-bottom: 1px solid #5e5e5e;
+}
+
+.context-menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background-color: #5e5e5e;
+}
+
+/* Add Group Button Styles */
+.add-group-button {
+    background-color: #4e4e4e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: auto; /* Push button to bottom */
+    width: 100%;
+}
+
+.add-group-button:hover {
+    background-color: #6e6e6e;
+}
+
+/* Variable Tab Width */
+:root {
+    --tab-width: 120px; /* Default tab width */
+    --half-tab-width: calc(var(--tab-width) / 2);
+    --num-columns: 4; /* Default number of columns */
+}
+
+.tab {
+    width: var(--tab-width);
+    min-width: 50px;
+    max-width: 300px;
+}
+
+/* Adjust the "+" tab to be half the width */
+.add-tab {
+    width: var(--half-tab-width);
+}
+
+/* Specific Styles for Export/Import Modal */
+#export-import-modal .modal-content {
+    width: 900px; /* 3x the original 300px */
+    height: 600px; /* 2x the original height */
+    overflow: auto; /* Enable scrolling if content overflows */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1000px) {
+    #export-import-modal .modal-content,
+    #add-multiple-pages-modal .modal-content {
+        width: 80%;
+        height: 80%;
+    }
+}
