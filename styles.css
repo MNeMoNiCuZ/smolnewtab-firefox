@@ -13,6 +13,16 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
+a {
+    color: #6aa6f8; /* Pleasant blue color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #88bafc; /* Slightly lighter blue on hover */
+}
+
 button {
     cursor: pointer;
     border: none;
