@@ -1,6 +1,9 @@
 # Features
 SmolNewTab features a "New Tab"-replacement for Firefox. It's a simple, low resource and limited shortcut grouping system.
 
+# Official Download - Mozilla Extensions
+[https://addons.mozilla.org/en-US/firefox/addon/smol-new-tab/](https://addons.mozilla.org/en-US/firefox/addon/smol-new-tab/)
+
 ## Groups & Page Shortcuts
 ![Draggable Sections](https://github.com/user-attachments/assets/61200340-23c5-4e02-86b6-95b8d03e1d5f)
 Add page shortcuts, one at a time, or many at once, or open all in a group with 1 click.
